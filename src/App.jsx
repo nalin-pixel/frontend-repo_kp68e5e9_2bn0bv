@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Verifier from './components/Verifier';
+import CTA from './components/CTA';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <footer className="border-t border-slate-200 py-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <p className="text-sm text-slate-500">© {year} SkillChain. All rights reserved.</p>
+        <div className="text-sm text-slate-600 flex items-center gap-4">
+          <a href="#aa" className="hover:text-slate-900">AA Portal</a>
+          <a href="#ab" className="hover:text-slate-900">AB Portal</a>
+          <a href="#verify" className="hover:text-slate-900">Verifier</a>
         </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      <Navbar />
+      <main>
+        <Hero />
+        <Features />
+        <Verifier />
+        <CTA />
+      </main>
+      <Footer />
+    </div>
+  );
+}
